@@ -4,12 +4,17 @@
   padding: 0;
 }
 #inputs{
+  top: 20px;
+  width: 95%;
+  padding-top: 20px;
+  height: 150%;
+  margin: auto;
   background-color: wheat;
   
 }
 
  #list{
-   border-radius: 5px black;
+   border-radius: 10px black;
    margin: auto;
    width: 30%;
   background-color: white;
@@ -36,4 +41,11 @@ div h2{
 #task{
   padding: 10px;
   border-radius: 10px black;
+}
+
+#input-state-id{
+  margin: 10px;
+}
+#input-state-nueva-tarea{
+  margin: 10px;
 }
