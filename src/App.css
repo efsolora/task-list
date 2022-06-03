@@ -49,3 +49,7 @@ div h2{
 #input-state-nueva-tarea{
   margin: 10px;
 }
+
+#delete{
+  right: 0;
+}

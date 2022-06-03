@@ -1,30 +1,9 @@
 import TodoItem from "./TodoItem";
-import React, { useState } from "react";
+import useChange from "../hooks/useChange";
 
 export default function TodoList() {
-  const [todos, setTodos] = useState([
-    { id: 1, name: "tirar la basura" },
-    { id: 2, name: "lavar ropa" },
-    { id: 3, name: "hacer almuerzo" },
-    { id: 4, name: "estudiar" },
-    { id: 5, name: "lavar" },
-  ]);
-  const handleclick = () => {
-    const idinput = document.getElementById("input-state-id");
-    const nuevatareainput = document.getElementById("input-state-nueva-tarea");
-    setTodos([...todos, { id: idinput.value, name: nuevatareainput.value }]);
-  };
-  const handledelete = () => {
-    const idinput = document.getElementById("input-state-id");
-    const nuevatareainput = document.getElementById("input-state-nueva-tarea");
-    setTodos(
-      todos.filter(
-        (todo) =>
-          todo.id !== Number(idinput.value) &&
-          todo.name !== nuevatareainput.value
-      )
-    );
-  };
+  const [todos, handleclick, handledelete] = useChange();
+
   return (
     <div id="list">
       <input
@@ -40,13 +19,15 @@ export default function TodoList() {
       <button onClick={handleclick} type="submit">
         Guardar
       </button>
-      <button onClick={handledelete} type="submit">
+      <button id="delete" onClick={handledelete} type="submit">
         Eliminar
       </button>
       <ul>
-        {todos.map((todo) => (
-          <TodoItem task={todo} />
-        ))}
+        {todos
+          .sort((a, b) => a.id - b.id)
+          .map((todo) => (
+            <TodoItem task={todo} />
+          ))}
       </ul>
     </div>
   );
