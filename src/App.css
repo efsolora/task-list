@@ -3,6 +3,14 @@
   margin: 0;
   padding: 0;
 }
+h1{
+  margin: 20px;
+  text-align: center;
+  box-shadow: 0 0 10px gray;
+  background-color: white;
+
+}
+
 #inputs{
   position: relative;
   top: 20px;
@@ -15,7 +23,7 @@
   
 }
 
- #list{
+#list{
   margin: auto;
   width: 30%;
   background-color: white;

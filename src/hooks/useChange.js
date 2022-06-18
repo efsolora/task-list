@@ -33,14 +33,7 @@ const useChange = () => {
     );
   };
 
-  const localStorage = () => {
-    const idinput = document.getElementById("input-state-id");
-    const nuevatareainput = document.getElementById("input-state-nueva-tarea");
-    const descripcioninput = document.getElementById("input-state-descrition");
-    setTodos([...todos, localStorage.setItem("todos", JSON.stringify(todos))]);
-  };
-
-  return [todos, handleClick, handleDelete, localStorage];
+  return [todos, handleClick, handleDelete];
 };
 
 export default useChange;

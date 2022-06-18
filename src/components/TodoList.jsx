@@ -1,12 +1,11 @@
 import TodoItem from "./TodoItem";
 import useChange from "../hooks/useChange";
 import { useForm } from "react-hook-form";
-import React, { useState } from "react";
+import React from "react";
 export default function TodoList() {
   const [todos, handleclick, handledelete] = useChange();
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => console.log(data);
-  const [state, setstate] = useState();
 
   return (
     <form id="list" onSubmit={handleSubmit(onSubmit)}>
@@ -42,7 +41,7 @@ export default function TodoList() {
       <button id="delete" onClick={handledelete} type="submit">
         Eliminar
       </button>
-      <ul onChange={localStorage}>
+      <ul>
         {todos
           .sort((a, b) => a.id - b.id)
           .map((todo, tod) => (
