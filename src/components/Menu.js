@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Button, Box } from "@chakra-ui/react";
+import { Button, Box, IconButton, useColorMode } from "@chakra-ui/react";
+import { FaSun, FaMoon } from "react-icons/fa";
 
 export default function Menu() {
+  const { colorMode, toggleColorMode } = useColorMode();
   return (
     <Box p={"10px"} textAlign={"center"}>
       <Link to="/">
@@ -28,6 +30,12 @@ export default function Menu() {
           Sobre Nosotros
         </Button>
       </Link>
+      <IconButton
+        icon={colorMode === "light" ? <FaSun /> : <FaMoon />}
+        isRound="true"
+        alignSelf={"flex-end"}
+        onClick={toggleColorMode}
+      ></IconButton>
     </Box>
   );
 }
