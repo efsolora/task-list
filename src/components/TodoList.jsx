@@ -79,7 +79,7 @@ export default function TodoList() {
           {todos
             .sort((a, b) => a.id - b.id)
             .map((todo, tod) => (
-              <TodoItem task={todo} key={tod} />
+              <TodoItem task={todo} handledelete={handledelete} key={tod} />
             ))}
         </Flex>
       </form>

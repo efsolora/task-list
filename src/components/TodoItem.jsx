@@ -1,13 +1,17 @@
 import React, { useState } from "react";
-import { Button, IconButton, Box } from "@chakra-ui/react";
-import { FaTrash } from "react-icons/fa";
-import useChange from "../components/hooks/useChange";
+import { Button, Heading, Box } from "@chakra-ui/react";
 
 export default function TodoItem({ task }) {
-  const [todos, handleDelete] = useChange();
   const [state, setState] = useState();
   return (
     <Box id="task" alignItems={"stretch"}>
+      <Heading as="h3" size={"md"}>
+        {task.id + "." + task.name}
+      </Heading>
+
+      <Heading as={"h4"} size="sm">
+        descripción: {task.description}
+      </Heading>
       {state === true ? (
         <Button
           size="sm"
@@ -31,13 +35,6 @@ export default function TodoItem({ task }) {
           pendiente
         </Button>
       )}
-      {task.id + "." + task.name}
-      <IconButton
-        onClick={() => handleDelete(todos.id)}
-        icon={<FaTrash />}
-      ></IconButton>
-
-      <h4>descripción: {task.description}</h4>
     </Box>
   );
 }

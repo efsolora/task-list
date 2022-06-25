@@ -21,11 +21,16 @@ const useChange = () => {
       },
     ]);
   };
-  const handleDelete = (id) => {
-    const deleteTask = todos.filter((todo) => {
-      return todo.id !== id;
-    });
-    setTodos(deleteTask);
+  const handleDelete = () => {
+    const idinput = document.getElementById("input-state-id");
+    const nuevatareainput = document.getElementById("input-state-nueva-tarea");
+    setTodos(
+      todos.filter(
+        (todo) =>
+          todo.id !== Number(idinput.value) &&
+          todo.name !== nuevatareainput.value
+      )
+    );
   };
 
   return [todos, handleClick, handleDelete];

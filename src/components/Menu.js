@@ -31,6 +31,7 @@ export default function Menu() {
         </Button>
       </Link>
       <IconButton
+        margin={"10px"}
         icon={colorMode === "light" ? <FaSun /> : <FaMoon />}
         isRound="true"
         alignSelf={"flex-end"}
